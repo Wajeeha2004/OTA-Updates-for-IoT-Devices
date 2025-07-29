@@ -5,11 +5,11 @@
 
 ### 🔧 **ArduinoOTA**:
 
- Upload code via Arduino IDE over WiFi
+           Upload code via Arduino IDE over WiFi
 
 ### 🌐 **ElegantOTA**:
 
- Update firmware through a web browser (/update)
+           Update firmware through a web browser (/update)
 
 ## 🧰 **Requirements:**
 
