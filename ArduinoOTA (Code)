@@ -1,0 +1,23 @@
+#include <ESP8266WiFi.h>
+#include <ArduinoOTA.h>
+const char* ssid = "Galaxy A13 7AC7";
+const char* password = "ucno4258";
+void setup() {
+ Serial.begin(115200);
+ pinMode(LED_BUILTIN, OUTPUT);
+ WiFi.begin(ssid, password);
+ while (WiFi.status() != WL_CONNECTED) {
+ delay(500);
+ Serial.print(".");
+ }
+ Serial.println("\nWiFi Connected. IP: " + WiFi.localIP().toString());
+ ArduinoOTA.setHostname("ESP-OTA");
+ ArduinoOTA.begin();
+}
+void loop() {
+ ArduinoOTA.handle();
+ digitalWrite(LED_BUILTIN, HIGH);
+ delay(1000); // Blink every 1 second (v1)
+ digitalWrite(LED_BUILTIN, LOW);
+ delay(1000);
+}
